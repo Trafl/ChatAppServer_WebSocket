@@ -1,35 +1,51 @@
 # ChatAppServer
 
-## Descrição:
-Servidor criado utilizando o SpringWebSocket com o intuito de conectar dois ou mais clientes para trocas de mensagem em tempo real.  
+## Description:
+Server made with SpringWebSocket for conect two or more clients for swith messagens in real time
   
 ## WebSocket:
-WebSocket é um protocolo de comunicação que fornece canais de comunicação bidirecional full-duplex sobre uma única conexão TCP. 
-Ele é projetado para ser implementado em navegadores e servidores web, permitindo interações em tempo real entre o cliente e o servidor com latência mínima.
+WebSocket is a communication protocol that provides full-duplex bidirectional communication channels over a single TCP connection.
+It is designed to be implemented in browsers and web servers, enabling real-time interactions between the client and server with minimal latency.
 
-## Como utilizar: 
-* Instale o Docker
-* Abrar o terminal, pode ser o padrão ou o da IDE, na pasta que for executar o projeto e utilize o comando
+## How to use: 
+* Install Docker
+*Open the terminal, it can be the standard one or the IDE one, in the folder where you want to run the project and use the command
 
   ``
   docker push pivoluz/chat_realtime-api
   ``
 
-* Depois de baixar a imagem execute
+* After downloading the image, run
 
   ``
   docker run --rm -p "8080:8080" -t chatapi pivoluz/chat_realtime-api
   ``
   
-* Conecte seu projeto corretamente:
+* Connect your project correctly:
 
-  * Para se conectar ao servidor ``ws://localhost:8080/conect_websocket``
+  * To connect to the server ``ws://localhost:8080/conect_websocket``
   
-  * Topico para se inscrever: ``/chat``
+  * Topic to subscribe: ``/chat``
     
-  * Para enviar ``/app/chat_send_message``
+  * To send ``/app/chat_send_message``
 
-## Tecnologias Utilizadas:
+## Body
+```json
+    {
+        "name": "Pedro",
+        "message": "Hey how's it going ?"
+    }
+```
+## Response
+```json
+    {
+        "name": "Pedro",
+        "message": "Hey how's it going ??",
+        "time": "12:30"
+    }
+```
+
+## Technologies Used:
 * Java 17
 * SpringWeb
 * SpringWebSocket
