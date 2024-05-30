@@ -46,8 +46,9 @@ public class ChatController {
 	@SendTo("/chat")
 	 public MsgAddUserDTO addUser(@Payload MsgAddUserDTO messageDTO, SimpMessageHeaderAccessor headerAccessor) {
 		// add username to session
-		headerAccessor.getSessionAttributes().put("username", messageDTO.name());
-		log.info("[{}] - [ChatController] - username: {}, add to headerAccessor", timestamp, messageDTO.name());
+		
+		headerAccessor.getSessionAttributes().put("username", messageDTO.username());
+		log.info("[{}] - [ChatController] - username: {}, add to headerAccessor", timestamp, messageDTO.username());
         return messageDTO;
 	}
 
