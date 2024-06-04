@@ -12,14 +12,14 @@ public class WebSocketServerConfig implements WebSocketMessageBrokerConfigurer {
 
    @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/chat"); //Canal para receber as mensagens
-        registry.setApplicationDestinationPrefixes("/app"); //Prefixo mapeado para cada rota
+        registry.enableSimpleBroker("/chat"); //Channel to receive messages
+        registry.setApplicationDestinationPrefixes("/app"); //Prefix mapped to each route
     }
 	
 	@Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("conect_websocket").setAllowedOrigins("*"); //Conecta ao WebSocket (Servidor)
-		registry.addEndpoint("conect_websocket").setAllowedOrigins("*").withSockJS(); //Conecta ao WebSocket (Servidor)
+		registry.addEndpoint("conect_websocket").setAllowedOrigins("*"); //Connected to WebSocket (Server)
+		registry.addEndpoint("conect_websocket").setAllowedOrigins("*").withSockJS(); //Connected to WebSocket (Server)
     }
 
 }

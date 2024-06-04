@@ -14,11 +14,4 @@ public class Msg {
 	private String message;
 	private String time;
 	private MsgType type;
-
-	public Msg(String name, String message, String time) {
-		this.username = name;
-		this.message = message;
-		this.time = time;
-	}
-	
 }

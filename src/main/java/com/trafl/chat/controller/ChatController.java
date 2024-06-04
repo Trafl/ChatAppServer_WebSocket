@@ -23,8 +23,8 @@ public class ChatController {
 	
 	String timestamp = LocalDateTime.now().toString();
 
-	@MessageMapping("/chat_send_message") // Manda msg no /app/chat_send_message
-	@SendTo("/chat") // A mensagem e encaminhada ao /chat
+	@MessageMapping("/chat_send_message")
+	@SendTo("/chat")
 	public Msg sendMessage(@Payload MsgDTO messageDTO) {
 		
 		log.info("[{}] - [ChatController] - Message received", timestamp);
@@ -45,7 +45,6 @@ public class ChatController {
 	@MessageMapping("/chat_add_user") 
 	@SendTo("/chat")
 	 public MsgAddUserDTO addUser(@Payload MsgAddUserDTO messageDTO, SimpMessageHeaderAccessor headerAccessor) {
-		// add username to session
 		
 		headerAccessor.getSessionAttributes().put("username", messageDTO.username());
 		log.info("[{}] - [ChatController] - username: {}, add to headerAccessor", timestamp, messageDTO.username());
