@@ -33,7 +33,8 @@ It is designed to be implemented in browsers and web servers, enabling real-time
 ```json
     {
         "name": "Pedro",
-        "message": "Hey how's it going ?"
+        "message": "Hey how's it going ?",
+        "type": "CHAT"
     }
 ```
 ## Response
@@ -41,9 +42,22 @@ It is designed to be implemented in browsers and web servers, enabling real-time
     {
         "name": "Pedro",
         "message": "Hey how's it going ??",
-        "time": "12:30"
+        "time": "12:30",
+        "type": "CHAT" 
     }
 ```
+
+## Server Login and Logout Notification:
+
+The Msg entity has an enum field that contains 3 types.
+
+JOIN -> when a user joins the chat server their name is added to the SimpMessageHeaderAccessor.
+
+CHAT -> the message is sent normally to the server.
+
+LEAVER -> When a user leaves, it activates the SessionDisconnectEvent, thus taking the username saved in the session and returning an message to the server.
+
+The types are a reference for the front end to know which notification it will play.
 
 ## Technologies Used:
 * Java 17
