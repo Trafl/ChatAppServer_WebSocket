@@ -1,7 +1,7 @@
 # ChatAppServer
 
 ## Description:
-Server made with SpringWebSocket for conect two or more clients for swith messagens in real time
+Server made with Spring WebSocket for connect two or more clients for switch messages in real time
   
 ## WebSocket:
 WebSocket is a communication protocol that provides full-duplex bidirectional communication channels over a single TCP connection.
