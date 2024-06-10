@@ -29,6 +29,14 @@ It is designed to be implemented in browsers and web servers, enabling real-time
     
   * To send ``/app/chat_send_message``
 
+## How to use with Front-End: 
+
+  * On the folder project, run:
+    ```
+    docker-compose up
+    ```
+  * Go to URL: [ http://localhost/login]( http://localhost/login)
+
 ## Body
 ```json
     {
@@ -65,3 +73,8 @@ The types are a reference for the front end to know which notification it will p
 * SpringWebSocket
 * Lombook
 * Docker
+
+## Contribution
+This project was built together with [https://github.com/Vidall](https://github.com/Vidall)
+
+The front-end that runs with this back-end is available at [https://github.com/Vidall/chat_frontEnd](https://github.com/Vidall/chat_frontEnd)<br>
