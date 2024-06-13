@@ -1,0 +1,12 @@
+version: '1.29.2'
+services:
+  backend: 
+    image: pivoluz/chat_realtime-api
+    ports:
+      - 8080:8080
+  frontend:
+      image: vidallluan/chat_frontend
+      ports:
+        - 80:80
+      depends_on:
+      - backend
